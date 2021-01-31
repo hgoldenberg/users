@@ -10,8 +10,8 @@ app.use(cors());
 app.use(express.json());
 
 // routes
-app.post("/api/register", (req, res) => res.send("register route"));
-app.post("/api/login", (req, res) => res.send("login route"));
-app.get("/api/users", (req, res) => res.send("users route"));
+app.use("/api/register", require("./routes/register"));
+app.use("/api/login", require("./routes/login"));
+app.use("/api/users", require("./routes/users"));
 
 module.exports = app;
