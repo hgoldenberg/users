@@ -1,9 +1,7 @@
 const { Router } = require("express");
 const router = Router();
+const { createUser } = require("../controllers/register.controller");
 
-router.route("/").post((req, res) =>
-  res.json({
-    message: "register post request",
-  })
-),
-  (module.exports = router);
+router.route("/").post(createUser);
+
+module.exports = router;
